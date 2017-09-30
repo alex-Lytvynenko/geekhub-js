@@ -1,0 +1,193 @@
+html{
+	min-height: 100%;
+	position: relative;
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+.container{
+	max-width: 1170px;
+	margin: 0 auto;
+}
+.container a{
+	transition: all 0.5s;
+	color: black;
+}
+.header{
+	display: -webkit-flex;
+  	display: flex;
+  	-webkit-align-items: center;
+  	align-items: center;
+  	background-color: grey;
+  	padding: 10px 20px
+}
+.header a{
+	display: inline-block;	
+}
+.header h1 a{
+	width: 200px;
+	height: 83px;
+	background-image: url(../img/geekhub.jpg);
+	text-indent: -9999px;
+}
+
+.menu{
+	margin-left: auto;
+}
+.menu li{
+	display: inline-block;
+	margin-left: 10px;
+}
+.menu a:hover{
+	color: yellow;
+}
+.menu li input{
+	padding: 3px;
+}
+
+/*navigation*/
+.navigation{
+	text-align: center;
+	background-color: grey;
+	border: 2px solid black;
+}
+.navigation li{
+	display: inline-block;
+	line-height: 30px;
+	margin: 0 10px;
+}
+.navigation li a{
+	text-decoration: none;
+}
+.navigation li a:hover{
+	color: red;
+}
+
+.submenu{
+	position: relative;
+}
+.submenu:hover ul{
+	display: inline-block;
+}
+.submenu ul{
+	position: absolute;
+	background-color: gold;
+	left: 20px;
+	top: 30px;
+	display: none;
+}
+.submenu ul li{
+	line-height: 16px;
+	width: 75px;
+	text-align: center;
+}
+.submenu ul a{
+	text-decoration: none;
+}
+.submenu ul li:hover > a{
+	color: black;
+	font-weight: 700;
+}
+
+/*content*/
+.content{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin: 50px;
+}
+.sidebar{
+	flex-basis: 20%;
+}
+.main-content{
+	flex-basis: 80%;
+	margin-bottom: 50px;
+}
+.sidebar li{
+	margin: 10px 0;
+	font-size: 20px;
+	list-style-type: circle;
+}
+.sidebar a{
+	text-decoration: none;
+}
+
+.footer{
+	text-align: center;
+	line-height: 50px;
+	background-color: grey;
+	position: absolute;
+	bottom: 0;
+	max-width: 1170px;
+	width: 100%;
+}
+
+/*hover efect links in the sidebar*/
+
+.hover-efect li a {
+	position: relative;
+	padding: 5px;
+	color: blue;
+	font-weight: 700;
+	text-shadow: none;
+	-webkit-transition: color 0.3s;
+	-moz-transition: color 0.3s;
+	transition: color 0.3s;
+}
+
+.hover-efect li a::before,
+.hover-efect li a::after {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: grey;
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+	-moz-transition: opacity 0.5s, -moz-transform 0.5s;
+	transition: opacity 0.5s, transform 0.5s;
+	-webkit-transform: translateY(-10px);
+	-moz-transform: translateY(-10px);
+	transform: translateY(-10px);
+}
+
+.hover-efect li a::before {
+	top: 3px;
+	-webkit-transform: translateY(-10px);
+	-moz-transform: translateY(-10px);
+	transform: translateY(-10px);
+}
+
+.hover-efect li a::after {
+	bottom: 0;
+	-webkit-transform: translateY(10px);
+	-moz-transform: translateY(10px);
+	transform: translateY(10px);
+}
+
+.hover-efect li a:hover,
+.hover-efect li a:focus {
+	color: blue;
+}
+
+.hover-efect li a:hover::before,
+.hover-efect li a:focus::before,
+.hover-efect li a:hover::after,
+.hover-efect li a:focus::after {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	transform: translateY(0px);
+}
+
+
+
+/*media queries */
+
+@media (max-width: 970px){
+	.sidebar, .main-content{
+		flex-basis: 100%;
+	}
+}
